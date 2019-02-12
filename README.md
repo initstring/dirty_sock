@@ -1,6 +1,14 @@
 # dirty_sock: Privilege Escalation in Ubuntu (via snapd)
 In January 2019, current versions of Ubuntu Linux were found to be vulnerable to local privilege escalation due to a bug in the snapd API. This repository contains the original exploit POC, which is being made available for research and education. For a detailed walkthrough of the vulnerability and the exploit, please refer to the <a href="https://initblog.com/2019/dirty-sock/" target="_blank"> blog posting here</a>.
 
+You can easily check if your system is vulnerable. Run the command below. If your `snapd` is 2.37 or newer, you are safe.
+```
+$ snap version
+...
+snapd   2.37
+...
+```
+
 # Usage
 ## Version One (use in most cases)
 This exploit bypasses access control checks to use a restricted API function (POST /v2/create-user) of the local snapd service. This queries the Ubuntu SSO for a username and public SSH key of a provided email address, and then creates a local user based on these value.
@@ -58,11 +66,13 @@ If using version two, and the exploit completes but you don't see your new accou
 
 Version 1 seems to be the easiest and fastest, if your environment supports it (SSH service running and accessible from localhost).
 
-You can always run `snap version` to see what level snapd is at. The exploit will not work on 2.37 and up.
-
 Please open issues for anything weird.
 
 # Disclosure Info
 The issue was reported directly to the snapd team via Ubuntu's bug tracker. You can read the full thread <a href="https://bugs.launchpad.net/snapd/+bug/1813365" target="_blank">here</a>.
 
 I was very impressed with Canonical's response to this issue. The team was awesome to work with, and overall the experience makes me feel very good about being an Ubuntu user myself.
+
+Public advisory links:
+- https://wiki.ubuntu.com/SecurityTeam/KnowledgeBase/SnapSocketParsing
+- https://usn.ubuntu.com/3887-1/
