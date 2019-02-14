@@ -36,6 +36,8 @@ dirty_sockv2 leverages the vulnerability to install an empty "devmode" snap incl
 
 As opposed to version one, this does not require the SSH service to be running. It will also work on newer versions of Ubuntu with no Internet connection at all, making it resilient to changes and effective in restricted environments.
 
+*Note for clarity: This version of the exploit does not hide inside a malicious snap. Instead, it uses a malicious snap as a delivery mechanism for the user creation payload. This is possible due to the same uid=0 bug as version 1*
+
 This exploit should also be effective on non-Ubuntu systems that have installed snapd but that do not support the "create-user" API due to incompatible Linux shell syntax.
 
 Some older Ubuntu systems (like 16.04) may not have the snapd components installed that are required for sideloading. If this is the case, this version of the exploit may trigger it to install those dependencies. During that installation, snapd may upgrade itself to a non-vulnerable version. Testing shows that the exploit is still successful in this scenario. See the troubleshooting section for more details.
