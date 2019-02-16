@@ -1,4 +1,4 @@
-# dirty_sock: Privilege Escalation in Ubuntu (via snapd)
+# dirty_sock: Linux Privilege Escalation (via snapd)
 In January 2019, current versions of Ubuntu Linux were found to be vulnerable to local privilege escalation due to a bug in the snapd API. This repository contains the original exploit POC, which is being made available for research and education. For a detailed walkthrough of the vulnerability and the exploit, please refer to the <a href="https://initblog.com/2019/dirty-sock/" target="_blank"> blog posting here</a>.
 
 Ubuntu comes with snapd by default, but any distribution should be exploitable if they have this package installed. You can easily check if your system is vulnerable. Run the command below. If your `snapd` is 2.37.1 or newer, you are safe.
