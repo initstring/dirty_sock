@@ -68,6 +68,21 @@ If using version two, and the exploit completes but you don't see your new accou
 
 Version 1 seems to be the easiest and fastest, if your environment supports it (SSH service running and accessible from localhost).
 
+Non-vulnerable systems will output something like the following:
+
+```
+[!] System may not be vulnerable, here is the API reply:
+
+
+HTTP/1.1 401 Unauthorized
+Content-Type: application/json
+Date: Mon, 18 Feb 2019 07:07:12 GMT
+Content-Length: 119
+
+{"type":"error","status-code":401,"status":"Unauthorized",
+"result":{"message":"access denied","kind":"login-required"}}
+```
+
 Please open issues for anything weird.
 
 # Disclosure Info
