@@ -93,3 +93,5 @@ I was very impressed with Canonical's response to this issue. The team was aweso
 Public advisory links:
 - https://wiki.ubuntu.com/SecurityTeam/KnowledgeBase/SnapSocketParsing
 - https://usn.ubuntu.com/3887-1/
+
+Note: I am posting information only to this GitHub repo, my blog at initblog.com, and my team's blog at shenaniganslabs.io. Any site masquerading as an official source is unfortunately beyond my control.
