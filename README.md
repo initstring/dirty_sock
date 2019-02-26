@@ -10,7 +10,6 @@ snapd   2.37.1
 ```
 
 Note that some systems return the distribution package version of snapd when you run this command, as opposed to the upstream version shown in the example above. If your snapd version has a reference to something like an Ubuntu version number appended to it (example: `2.34.2ubuntu0.1` or `2.35.5+18.10.1` then please consult [this link](https://usn.ubuntu.com/3887-1/) to determine if you are running a patched version.
-```
 
 # Usage
 ## Version One (use in most cases)
