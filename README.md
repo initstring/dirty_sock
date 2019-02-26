@@ -11,7 +11,7 @@ snapd   2.37.1
 
 Note that some systems return the distribution package version of snapd when you run `snap version` as opposed to the upstream version. Here is an example from a patched (non-vulnerable) system, as this is a repacked upstream version of 2.37.1:
 
-````
+```
 $ snap version
 ...
 snapd 2.34.2ubuntu0.1
