@@ -9,6 +9,15 @@ snapd   2.37.1
 ...
 ```
 
+Note that some systems return the distribution package version of snapd when you run `snap version` as opposed to the upstream version. Here is an example from a patched (non-vulnerable) system, as this is a repacked upstream version of 2.37.1:
+
+````
+$ snap version
+...
+snapd 2.34.2ubuntu0.1
+...
+```
+
 # Usage
 ## Version One (use in most cases)
 This exploit bypasses access control checks to use a restricted API function (POST /v2/create-user) of the local snapd service. This queries the Ubuntu SSO for a username and public SSH key of a provided email address, and then creates a local user based on these value.
