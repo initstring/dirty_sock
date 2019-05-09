@@ -12,7 +12,7 @@ snapd   2.37.1
 Note that some systems return the distribution package version of snapd when you run this command, as opposed to the upstream version shown in the example above. If your snapd version has a reference to something like an Ubuntu version number appended to it (example: `2.34.2ubuntu0.1` or `2.35.5+18.10.1` then please consult [this link](https://usn.ubuntu.com/3887-1/) to determine if you are running a patched version.
 
 # Usage
-## Version One (use in most cases)
+## Version One (requires outbound Internet and running SSH service)
 This exploit bypasses access control checks to use a restricted API function (POST /v2/create-user) of the local snapd service. This queries the Ubuntu SSO for a username and public SSH key of a provided email address, and then creates a local user based on these value.
 
 Successful exploitation for this version requires an outbound Internet connection and an SSH service accessible via localhost.
@@ -31,7 +31,7 @@ python3 ./dirty_sockv1.py -u "you@yourmail.com" -k "id_rsa"
 [Script will automatically ssh to localhost with the SSH key here]
 ```
 
-## Version Two (use in special cases)
+## Version Two (does not require Internet or SSH, but may trigger a snapd upgrade)
 This exploit bypasses access control checks to use a restricted API function (POST /v2/snaps) of the local snapd service. This allows the installation of arbitrary snaps. Snaps in "devmode" bypass the sandbox and may include an "install hook" that is run in the context of root at install time.
 
 dirty_sockv2 leverages the vulnerability to install an empty "devmode" snap including a hook that adds a new user to the local system. This user will have permissions to execute sudo commands.
